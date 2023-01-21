@@ -1,0 +1,16 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import * as React from 'react'
+import { connectedRender } from '@src/testUtils'
+import { screen } from '@testing-library/react'
+import { {{formattedComponentName}}Props } from './{{formattedComponentName}}.component'
+import { {{formattedComponentName}} }from '.'
+
+const mockProps: {{formattedComponentName}}Props = {}
+const { getByTestId } = screen
+
+describe('{{formattedComponentName}} test', () => {
+    it('should render the component', () => {
+        connectedRender(<{{formattedComponentName}} {...mockProps}/>)
+        expect(getByTestId(/{{formattedComponentTestId}}/i)).toBeInTheDocument()
+    })
+})

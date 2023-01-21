@@ -1,0 +1,12 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { ComponentStory, ComponentMeta } from '@storybook/react'
+
+import {{formattedComponentName}} from './{{formattedComponentName}}.component'
+
+export default {
+    title: '{{formattedComponentName}}',
+    component: {{formattedComponentName}}
+} as ComponentMeta<typeof {{formattedComponentName}}>
+
+const Template: ComponentStory<typeof {{formattedComponentName}}> = (args) => <{{formattedComponentName}} {...args} />
+export const Default = Template.bind({})
