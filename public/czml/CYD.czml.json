@@ -1,0 +1,106 @@
+[
+    {
+        "id": "document",
+        "version": "1.0"
+    },
+    {
+        "id": "CYD",
+        "availability": "2021-06-24T04:00:00Z/2021-06-25T04:00:00Z",
+        "position": {
+            "cartographicDegrees": [
+                -116.538458,
+                37.753553,
+                5641.6
+            ]
+        },
+        "billboard": {
+            "image": [
+                {
+                    "interval": "2021-06-24T04:00:00Z/2021-06-24T16:11:07Z",
+                    "uri": "/assets/emitter-intermediate.svg"
+                },
+                {
+                    "interval": "2021-06-24T16:11:07Z/2021-06-24T16:11:08Z",
+                    "uri": "/assets/emitter-on.svg"
+                },
+                {
+                    "interval": "2021-06-24T16:11:08Z/2021-06-24T16:19:27Z",
+                    "uri": "/assets/emitter-off.svg"
+                },
+                {
+                    "interval": "2021-06-24T16:19:27Z/2021-06-24T16:19:28Z",
+                    "uri": "/assets/emitter-on.svg"
+                },
+                {
+                    "interval": "2021-06-24T16:19:28Z/2021-06-24T16:27:47Z",
+                    "uri": "/assets/emitter-off.svg"
+                },
+                {
+                    "interval": "2021-06-24T16:27:47Z/2021-06-24T16:27:48Z",
+                    "uri": "/assets/emitter-on.svg"
+                },
+                {
+                    "interval": "2021-06-24T16:27:48Z/2021-06-24T16:36:07Z",
+                    "uri": "/assets/emitter-off.svg"
+                },
+                {
+                    "interval": "2021-06-24T16:36:07Z/2021-06-24T16:36:08Z",
+                    "uri": "/assets/emitter-on.svg"
+                },
+                {
+                    "interval": "2021-06-24T16:36:08Z/2021-06-24T16:44:27Z",
+                    "uri": "/assets/emitter-off.svg"
+                },
+                {
+                    "interval": "2021-06-24T16:44:27Z/2021-06-24T16:44:28Z",
+                    "uri": "/assets/emitter-on.svg"
+                },
+                {
+                    "interval": "2021-06-24T16:44:28Z/2021-06-24T17:01:07Z",
+                    "uri": "/assets/emitter-off.svg"
+                },
+                {
+                    "interval": "2021-06-24T17:01:07Z/2021-06-24T17:01:08Z",
+                    "uri": "/assets/emitter-on.svg"
+                },
+                {
+                    "interval": "2021-06-24T17:01:08Z/2021-06-25T04:00:00Z",
+                    "uri": "/assets/emitter-off.svg"
+                }
+            ],
+            "show": true,
+            "scale": 1.0
+        },
+        "label": {
+            "horizontalOrigin": "CENTER",
+            "verticalOrigin": "CENTER",
+            "show": true,
+            "text": "CYD",
+            "font": "12pt Arial",
+            "style": "FILL",
+            "fillColor": {
+                "rgba": [
+                    255,
+                    255,
+                    255,
+                    255
+                ]
+            },
+            "outlineColor": {
+                "rgba": [
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            },
+            "outlineWidth": 1.0,
+            "pixelOffset": {
+                "cartesian2": [
+                    0.0,
+                    35.0
+                ]
+            }
+        }
+    }
+]

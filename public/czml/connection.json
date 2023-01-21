@@ -1,0 +1,253 @@
+[
+    {
+        "id": "document",
+        "version": "1.0"
+    },
+    {
+        "id": "CCH-r",
+        "availability": [
+            "2021-06-24T00:00:00+00:00/2021-06-25T00:00:00+00:00"
+        ],
+        "position": {
+            "cartographicDegrees": [
+                -116.76933,
+                37.301162,
+                5881.04
+            ]
+        },
+        "billboard": {
+            "image": [
+                {
+                    "uri": "http://localhost:3000/assets/Rectangle-green.svg"
+                }
+            ],
+            "show": true,
+            "scale": 1.0
+        }
+    },
+    {
+        "id": "faa9ba62-9690-4f60-b3ce-d8f09b478278-r",
+        "availability": "2021-06-24T20:30:55+00:00/2021-06-24T21:57:48+00:00",
+        "billboard": {
+            "image": [
+                {
+                    "uri": "http://localhost:3000/assets/Rectangle.svg"
+                }
+            ],
+            "show": true,
+            "scale": 1.0
+        },
+        "orientation": {
+            "velocityReference": "#position"
+        },
+        "position": {
+            "reference": "faa9ba62-9690-4f60-b3ce-d8f09b478278#position"
+        }
+    },
+    {
+        "id": "e01ffcd4-9ede-4f78-b6dd-32b23eaa234a-r",
+        "availability": "2021-06-24T19:35:42+00:00/2021-06-24T22:58:37+00:00",
+        "billboard": {
+            "image": [
+                {
+                    "uri": "http://localhost:3000/assets/Rectangle-green.svg"
+                }
+            ],
+            "show": true,
+            "scale": 1.0
+        },
+        "orientation": {
+            "velocityReference": "#position"
+        },
+        "position": {
+            "reference": "e01ffcd4-9ede-4f78-b6dd-32b23eaa234a#position"
+        }
+    },
+    {
+        "id": "f49d409c-710b-49ae-844c-a88cb1d3894d-e",
+        "availability": "2021-06-24T19:19:31+00:00/2021-06-24T23:40:03+00:00",
+        "billboard": {
+            "image": [
+                {
+                    "uri": "http://localhost:3000/assets/Ellipse.svg"
+                }
+            ],
+            "show": true,
+            "scale": 1.0
+        },
+        "orientation": {
+            "velocityReference": "#position"
+        },
+        "position": {
+            "reference": "f49d409c-710b-49ae-844c-a88cb1d3894d#position"
+        }
+    },
+    {
+        "id": "20e835e6-c21d-415f-90d9-0b8514d70ee5-r",
+        "availability": "2021-06-24T19:46:20+00:00/2021-06-24T22:59:07+00:00",
+        "billboard": {
+            "image": [
+                {
+                    "uri": "http://localhost:3000/assets/Rectangle.svg"
+                }
+            ],
+            "show": true,
+            "scale": 1.0
+        },
+        "orientation": {
+            "velocityReference": "#position"
+        },
+        "position": {
+            "reference": "20e835e6-c21d-415f-90d9-0b8514d70ee5#position"
+        }
+    },
+    {
+        "id": "faa9ba62-9690-4f60-b3ce-d8f09b478278||e01ffcd4-9ede-4f78-b6dd-32b23eaa234a",
+        "name": "Connections",
+        "description": "List of Connections"
+    },
+    {
+        "id": "faa9ba62-9690-4f60-b3ce-d8f09b478278||e01ffcd4-9ede-4f78-b6dd-32b23eaa234a_1",
+        "name": "1-2",
+        "parent": "faa9ba62-9690-4f60-b3ce-d8f09b478278||e01ffcd4-9ede-4f78-b6dd-32b23eaa234a",
+        "availability": [
+            "2021-06-24T19:57:25Z/2021-06-24T22:41:25Z"
+        ],
+        "polyline": {
+            "show": [
+                {
+                    "interval": "2021-06-24T19:57:25Z/2021-06-24T22:41:25Z",
+                    "boolean": true
+                }
+            ],
+            "width": 1,
+            "material": {
+                "solidColor": {
+                    "color": {
+                        "rgba": [
+                            0,
+                            255,
+                            0,
+                            255
+                        ]
+                    }
+                }
+            },
+            "followSurface": false,
+            "positions": {
+                "references": [
+                    "faa9ba62-9690-4f60-b3ce-d8f09b478278#position",
+                    "f49d409c-710b-49ae-844c-a88cb1d3894d#position"
+                ]
+            }
+        }
+    },
+    {
+        "id": "faa9ba62-9690-4f60-b3ce-d8f09b478278||e01ffcd4-9ede-4f78-b6dd-32b23eaa234a_2",
+        "name": "2-3",
+        "parent": "faa9ba62-9690-4f60-b3ce-d8f09b478278||e01ffcd4-9ede-4f78-b6dd-32b23eaa234a",
+        "availability": [
+            "2021-06-24T19:57:25Z/2021-06-24T22:41:25Z"
+        ],
+        "polyline": {
+            "show": [
+                {
+                    "interval": "2021-06-24T19:57:25Z/2021-06-24T22:41:25Z",
+                    "boolean": true
+                }
+            ],
+            "width": 1,
+            "material": {
+                "solidColor": {
+                    "color": {
+                        "rgba": [
+                            0,
+                            255,
+                            0,
+                            255
+                        ]
+                    }
+                }
+            },
+            "followSurface": false,
+            "positions": {
+                "references": [
+                    "f49d409c-710b-49ae-844c-a88cb1d3894d#position",
+                    "e01ffcd4-9ede-4f78-b6dd-32b23eaa234a#position"
+                ]
+            }
+        }
+    },
+    {
+        "id": "faa9ba62-9690-4f60-b3ce-d8f09b478278||e01ffcd4-9ede-4f78-b6dd-32b23eaa234a_3",
+        "name": "3-4",
+        "parent": "faa9ba62-9690-4f60-b3ce-d8f09b478278||e01ffcd4-9ede-4f78-b6dd-32b23eaa234a",
+        "availability": [
+            "2021-06-24T19:57:25Z/2021-06-24T22:41:25Z"
+        ],
+        "polyline": {
+            "show": [
+                {
+                    "interval": "2021-06-24T19:57:25Z/2021-06-24T22:41:25Z",
+                    "boolean": true
+                }
+            ],
+            "width": 1,
+            "material": {
+                "solidColor": {
+                    "color": {
+                        "rgba": [
+                            0,
+                            255,
+                            255,
+                            255
+                        ]
+                    }
+                }
+            },
+            "followSurface": false,
+            "positions": {
+                "references": [
+                    "20e835e6-c21d-415f-90d9-0b8514d70ee5#position",
+                    "e01ffcd4-9ede-4f78-b6dd-32b23eaa234a#position"
+                ]
+            }
+        }
+    },
+    {
+        "id": "faa9ba62-9690-4f60-b3ce-d8f09b478278||e01ffcd4-9ede-4f78-b6dd-32b23eaa234a_4",
+        "name": "4-emitter",
+        "parent": "faa9ba62-9690-4f60-b3ce-d8f09b478278||e01ffcd4-9ede-4f78-b6dd-32b23eaa234a",
+        "availability": [
+            "2021-06-24T19:57:25Z/2021-06-24T22:41:25Z"
+        ],
+        "polyline": {
+            "show": [
+                {
+                    "interval": "2021-06-24T19:57:25Z/2021-06-24T22:41:25Z",
+                    "boolean": true
+                }
+            ],
+            "width": 1,
+            "material": {
+                "solidColor": {
+                    "color": {
+                        "rgba": [
+                            255,
+                            255,
+                            255,
+                            255
+                        ]
+                    }
+                }
+            },
+            "followSurface": false,
+            "positions": {
+                "references": [
+                    "20e835e6-c21d-415f-90d9-0b8514d70ee5#position",
+                    "CCH-r#position"
+                ]
+            }
+        }
+    }
+]

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+
+      <Placemark>
+<LineString>
+        <extrude>2</extrude>
+        <tessellate>1</tessellate>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>
+    	-118.560278,39.101388,0
+	-117.384167,39.166667,0
+	-117.434167,39.916667,0
+	-117.800833,40.100000,0
+	-117.959167,40.100000,0
+	-118.251112,40.016667,0
+	-118.634445,39.850000,0
+	-118.632222,39.764722,0
+	-118.426112,39.416667,0
+	-118.351112,39.283333,0
+	 -118.560278,39.101388,0
+</coordinates>
+</LineString>
+
+      </Placemark>
+</kml>

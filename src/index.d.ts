@@ -83,3 +83,35 @@ export type EventTestRun = {
   start_date_time: string;
   end_date_time: string;
 };
+
+export type Event = {
+  created?: string;
+  last_updated?: string;
+  created_by?: string;
+  last_updated_by?: string;
+  id?: string;
+  code?: string;
+  name: string;
+  status?: "Draft" | "Submitted" | "Approved" | "Archived";
+  start_date_time?: string | null;
+  end_date_time?: string | null;
+  registration_end_date?: string | null;
+  number?: number;
+  data?: {
+    location?: string | null;
+    description?: string | null;
+    objectives?:
+      | {
+          name?: string;
+        }[]
+      | null;
+    schedule?:
+      | {
+          name?: string;
+          title?: string;
+          start_date_time?: string;
+          end_date_time?: string;
+        }[]
+      | null;
+  };
+};

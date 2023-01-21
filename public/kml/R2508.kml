@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="1">
+        <Placemark id="3">
+            <name>2508</name>
+            <description>2508</description>
+            <LineString id="2">
+                <coordinates>-117.334167,37.200000,0.0 -116.392500,35.575000,0.0 -116.313333,35.476389,0.0 -116.313333,35.312500,0.0 -116.567500,35.116667,0.0 -116.796667,35.116667,0.0 -116.811944,35.147222,0.0 -116.978611,35.108333,0.0 -117.198056,34.891667,0.0 -117.534167,34.838889,0.0 -117.534167,34.808333,0.0 -117.584167,34.800000,0.0 -118.017500,34.800000,0.0 -118.096667,34.827778,0.0 -118.096667,34.858333,0.0 -118.350833,34.933333,0.0 -118.584167,35.250000,0.0 -118.584167,37.200000,0.0 -117.334167,37.200000,0.0</coordinates>
+                <extrude>2</extrude>
+                <tessellate>1</tessellate>
+                <altitudeMode>absolute</altitudeMode>
+            </LineString>
+        </Placemark>
+        <Placemark id="5">
+            <name>2</name>
+            <description>2</description>
+            <LineString id="4">
+                <coordinates>-118.000833,37.200000,0.0 -117.334167,37.200000,0.0 -116.917500,36.500000,0.0 -117.800833,36.500000,0.0 -118.000833,36.766667,0.0 -118.000833,37.200000,0.0</coordinates>
+                <extrude>2</extrude>
+                <tessellate>1</tessellate>
+                <altitudeMode>absolute</altitudeMode>
+            </LineString>
+        </Placemark>
+        <Placemark id="7">
+            <name>3</name>
+            <description>3</description>
+            <LineString id="6">
+                <coordinates>-118.434167,37.200000,0.0 -118.000833,37.200000,0.0 -118.000833,37.150000,0.0 -118.334167,37.033333,0.0 -118.434167,37.200000,0.0</coordinates>
+                <extrude>2</extrude>
+                <tessellate>1</tessellate>
+                <altitudeMode>absolute</altitudeMode>
+            </LineString>
+        </Placemark>
+        <Placemark id="9">
+            <name>4</name>
+            <description>4</description>
+            <LineString id="8">
+                <coordinates>-117.800833,36.500000,0.0 -116.917500,36.500000,0.0 -116.392500,35.575000,0.0 -116.495278,35.575000,0.0 -116.495278,35.629167,0.0 -116.923056,35.629167,0.0 -116.923056,35.800000,0.0 -117.284167,35.800000,0.0 -117.284167,35.600000,0.0 -117.434167,35.600000,0.0 -117.434167,35.461111,0.0 -117.642500,35.322222,0.0 -117.642500,35.350000,0.0 -117.490556,35.654167,0.0 -117.417500,35.675000,0.0 -117.417500,36.233333,0.0 -117.600833,36.233333,0.0 -117.800833,36.500000,0.0</coordinates>
+                <extrude>2</extrude>
+                <tessellate>1</tessellate>
+                <altitudeMode>absolute</altitudeMode>
+            </LineString>
+        </Placemark>
+        <Placemark id="11">
+            <name>2505</name>
+            <description>2505</description>
+            <LineString id="10">
+                <coordinates>-117.884167,36.233333,0.0 -117.417500,36.233333,0.0 -117.417500,35.675000,0.0 -117.592500,35.625000,0.0 -117.792500,35.625000,0.0 -117.884167,35.900000,0.0 -117.884167,36.233333,0.0</coordinates>
+                <extrude>2</extrude>
+                <tessellate>1</tessellate>
+                <altitudeMode>absolute</altitudeMode>
+            </LineString>
+        </Placemark>
+        <Placemark id="13">
+            <name>2506</name>
+            <description>2506</description>
+            <LineString id="12">
+                <coordinates>-117.689722,35.625000,0.0 -117.681389,35.466667,0.0 -117.784167,35.466667,0.0 -117.792500,35.625000,0.0 -117.689722,35.625000,0.0</coordinates>
+                <extrude>2</extrude>
+                <tessellate>1</tessellate>
+                <altitudeMode>absolute</altitudeMode>
+            </LineString>
+        </Placemark>
+        <Placemark id="15">
+            <name>2524</name>
+            <description>2524</description>
+            <LineString id="14">
+                <coordinates>-116.923056,35.800000,0.0 -116.923056,35.265556,0.0 -117.434167,35.265556,0.0 -117.434167,35.600000,0.0 -117.284167,35.600000,0.0 -117.284167,35.800000,0.0 -116.923056,35.800000,0.0</coordinates>
+                <extrude>2</extrude>
+                <tessellate>1</tessellate>
+                <altitudeMode>absolute</altitudeMode>
+            </LineString>
+        </Placemark>
+        <Placemark id="17">
+            <name>5</name>
+            <description>5</description>
+            <LineString id="16">
+                <coordinates>-118.584167,36.133333,0.0 -117.884167,36.133333,0.0 -117.884167,35.900000,0.0 -117.792500,35.625000,0.0 -117.592500,35.625000,0.0 -117.490556,35.654167,0.0 -117.642500,35.350000,0.0 -117.642500,35.322222,0.0 -118.096667,35.016667,0.0 -118.096667,34.827778,0.0 -118.096667,34.800000,0.0 -118.234167,34.850000,0.0 -118.350833,34.933333,0.0 -118.584167,35.250000,0.0 -118.584167,36.133333,0.0</coordinates>
+                <extrude>2</extrude>
+                <tessellate>1</tessellate>
+                <altitudeMode>absolute</altitudeMode>
+            </LineString>
+        </Placemark>
+        <Placemark id="19">
+            <name>6</name>
+            <description>6</description>
+            <LineString id="18">
+                <coordinates>-119.000833,36.133333,0.0 -118.584167,36.133333,0.0 -118.584167,35.666667,0.0 -118.850833,35.666667,0.0 -119.000833,36.133333,0.0</coordinates>
+                <extrude>2</extrude>
+                <tessellate>1</tessellate>
+                <altitudeMode>absolute</altitudeMode>
+            </LineString>
+        </Placemark>
+        <Placemark id="21">
+            <name>7</name>
+            <description>7</description>
+            <LineString id="20">
+                <coordinates>-118.850833,35.666667,0.0 -118.584167,35.666667,0.0 -118.584167,35.250000,0.0 -118.350833,34.933333,0.0 -118.700833,35.233333,0.0 -118.850833,35.666667,0.0</coordinates>
+                <extrude>2</extrude>
+                <tessellate>1</tessellate>
+                <altitudeMode>absolute</altitudeMode>
+            </LineString>
+        </Placemark>
+        <Placemark id="23">
+            <name>8</name>
+            <description>8</description>
+            <LineString id="22">
+                <coordinates>-116.313333,35.430000,0.0 -116.162778,35.425000,0.0 -116.163056,35.387500,0.0 -116.504722,35.115000,0.0 -116.567500,35.116667,0.0 -116.312500,35.312500,0.0 -116.313333,35.430000,0.0</coordinates>
+                <extrude>2</extrude>
+                <tessellate>1</tessellate>
+                <altitudeMode>absolute</altitudeMode>
+            </LineString>
+        </Placemark>
+        <Placemark id="25">
+            <name>9</name>
+            <description>9</description>
+            <LineString id="24">
+                <coordinates>-116.313333,35.476389,0.0 -116.313333,35.312500,0.0 -116.567500,35.116667,0.0 -116.796667,35.116667,0.0 -116.811944,35.147222,0.0 -116.705000,35.173611,0.0 -116.313333,35.476389,0.0</coordinates>
+                <extrude>2</extrude>
+                <tessellate>1</tessellate>
+                <altitudeMode>absolute</altitudeMode>
+            </LineString>
+        </Placemark>
+        <Placemark id="27">
+            <name>10</name>
+            <description>10</description>
+            <LineString id="26">
+                <coordinates>-116.495278,35.629167,0.0 -116.495278,35.575000,0.0 -116.392500,35.575000,0.0 -116.313333,35.476389,0.0 -116.705000,35.173611,0.0 -116.811944,35.147222,0.0 -116.817500,35.166667,0.0 -116.817500,35.316667,0.0 -116.923056,35.316667,0.0 -116.923056,35.629167,0.0 -116.495278,35.629167,0.0</coordinates>
+                <extrude>2</extrude>
+                <tessellate>1</tessellate>
+                <altitudeMode>absolute</altitudeMode>
+            </LineString>
+        </Placemark>
+        <Placemark id="29">
+            <name>2515</name>
+            <description>2515</description>
+            <LineString id="28">
+                <coordinates>-116.817500,35.316667,0.0 -116.817500,35.166667,0.0 -116.811944,35.147222,0.0 -116.978611,35.108333,0.0 -117.198056,34.891667,0.0 -117.534167,34.838889,0.0 -117.534167,34.808333,0.0 -117.584167,34.800000,0.0 -118.017500,34.800000,0.0 -118.096667,34.827778,0.0 -118.096667,35.016667,0.0 -117.434167,35.461111,0.0 -117.434167,35.265556,0.0 -116.923056,35.265556,0.0 -116.923056,35.316667,0.0 -116.817500,35.316667,0.0</coordinates>
+                <extrude>2</extrude>
+                <tessellate>1</tessellate>
+                <altitudeMode>absolute</altitudeMode>
+            </LineString>
+        </Placemark>
+        <Placemark id="31">
+            <name>11</name>
+            <description>11</description>
+            <LineString id="30">
+                <coordinates>-116.917500,36.500000,0.0 -116.784167,36.500000,0.0 -116.300833,36.100000,0.0 -115.884167,35.650000,0.0 -116.313333,35.312500,0.0 -116.313333,35.476389,0.0 -116.392500,35.575000,0.0 -116.917500,36.500000,0.0</coordinates>
+                <extrude>2</extrude>
+                <tessellate>1</tessellate>
+                <altitudeMode>absolute</altitudeMode>
+            </LineString>
+        </Placemark>
+        <Placemark id="33">
+            <name>12</name>
+            <description>12</description>
+            <LineString id="32">
+                <coordinates>-116.567500,35.116667,0.0 -116.684167,35.022222,0.0 -117.150833,34.938889,0.0 -116.978611,35.108333,0.0</coordinates>
+                <extrude>2</extrude>
+                <tessellate>1</tessellate>
+                <altitudeMode>absolute</altitudeMode>
+            </LineString>
+        </Placemark>
+        <Placemark id="35">
+            <name>13</name>
+            <description>13</description>
+            <LineString id="34">
+                <coordinates>-118.096667,34.827778,0.0 -118.096667,34.800000,0.0 -118.000833,34.766667,0.0 -117.584167,34.775000,0.0 -117.434167,34.825000,0.0 -117.434167,34.854722,0.0</coordinates>
+                <extrude>2</extrude>
+                <tessellate>1</tessellate>
+                <altitudeMode>absolute</altitudeMode>
+            </LineString>
+        </Placemark>
+    </Document>
+</kml>
