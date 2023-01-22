@@ -1,13 +1,14 @@
 import { BASE_API_SERVER_URL } from "@src/globals";
 import { useGetTspiEntityRunsByEventId } from "@src/hooks/useGetTspiEntityRunsByEventId";
 import { EventTspiEntityRun } from "@src/index";
-import React, { useMemo, useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import {
   CesiumComponentRef,
   CzmlDataSource as ResiumCzmlDataSource,
 } from "resium";
 import { CzmlDataSource } from "cesium";
 import noop from "lodash.noop";
+import useUiStore from "@src/zustand/uiStore";
 
 interface EntitiesProps {
   eventId: string;
@@ -15,19 +16,19 @@ interface EntitiesProps {
 }
 
 const Entities = ({ eventId, onLoaded = noop }: EntitiesProps) => {
-  const { entitiesCzml } = useGetTspiEntityRunsByEventId({
+  const { assetLabelsVisible } = useUiStore();
+
+  const { entityRunData } = useGetTspiEntityRunsByEventId({
     rootUrl: BASE_API_SERVER_URL,
     eventId,
   });
-
-  console.log(JSON.stringify(entitiesCzml));
 
   const entityRunsRef = useRef<
     Record<string, CesiumComponentRef<CzmlDataSource> | null>
   >({});
   const validEntities = useMemo(
-    () => entitiesCzml?.filter((entityRun) => !!entityRun.id),
-    [entitiesCzml]
+    () => entityRunData?.filter((entityRun) => !!entityRun.id),
+    [entityRunData]
   );
   const loadedEntitiesCounter = useRef<number>(0);
 
@@ -38,6 +39,25 @@ const Entities = ({ eventId, onLoaded = noop }: EntitiesProps) => {
       onLoaded();
     }
   };
+
+  useEffect(() => {
+    if (entityRunsRef.current) {
+      Object.entries(entityRunsRef.current).forEach(([id, emitterSite]) => {
+        if (!emitterSite?.cesiumElement) return;
+        console.log("++++> ", id, emitterSite?.cesiumElement?.entities);
+        try {
+          // @ts-ignore
+          emitterSite.cesiumElement.entities._entities._array[0]._label._show._value =
+            assetLabelsVisible;
+          // emitterSite.cesiumElement.entities._entities._array[0]._label;
+        } catch (error) {
+          console.error("error");
+          // @ts-ignore
+          console.error(emitterSite.cesiumElement.entities._entities);
+        }
+      });
+    }
+  }, [assetLabelsVisible]);
 
   if (!validEntities) return null;
 

@@ -57,6 +57,8 @@
         "orientation": {
             "velocityReference": "#position"
         },
+        // this is a structure that provides sampled values in one second intervals starting at an epoch
+        // https://github.com/AnalyticalGraphicsInc/czml-writer/wiki/CZML-Structure#sampled-property-values
         "position": {
             "interpolationAlgorithm": "LAGRANGE",
             "interpolationDegree": 1,
@@ -62467,6 +62469,14 @@
                 32.9645857052,
                 6254.2167218310515,
                 15601,
+                // NOTE: assuming this is seconds, this becomes 4:20:01 in H:MM:SS
+                // we'll call this amount of time "FT"
+                // our interval time is: 19:19:31+00:00 to 2021-06-24T23:40:03
+                // 19:19:31 -> 23:40:03
+                // our epoch time is also 19:19:31
+                // adding the FT the epoch time:
+                // 19:19:31 + 4:20:01 = 23:39:32 which is very close to the interval time
+                // this means that the assumption about the number being in seconds is correct
                 -112.429080257,
                 32.9630291144,
                 6254.853126467693

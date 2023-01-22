@@ -39,6 +39,7 @@
     "**/*.ts",
     "**/*.tsx",
     "plopfile.js",
+    "src/hooks/useGetKmlFilesById",
   ],
   "exclude": [
     "node_modules"

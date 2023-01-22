@@ -7,7 +7,7 @@ import { useGetTestRunsByEventId } from "../useGetTestRunsByEventId";
 
 const useLoadEventData = ({ eventId }: { eventId: string }) => {
   const {
-    entitiesCzml,
+    entityRunData,
     isLoading: isCzmlLoading,
     isError: isCzmlError,
   } = useGetTspiEntityRunsByEventId({
@@ -48,7 +48,7 @@ const useLoadEventData = ({ eventId }: { eventId: string }) => {
   });
 
   return {
-    entitiesCzml,
+    entityRunData,
     isCzmlLoading,
     isCzmlError,
     emitterSites,

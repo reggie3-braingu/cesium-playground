@@ -7,6 +7,7 @@ import {
 } from "@mui/material";
 import { BASE_API_SERVER_URL } from "@src/globals";
 import { useGetTestRunsByEventId } from "@src/hooks/useGetTestRunsByEventId";
+import useUiStore from "@src/zustand/uiStore";
 import React, { useState } from "react";
 
 interface RunSelectProps {
@@ -40,6 +41,7 @@ const RunSelect = ({ eventId, onRunSelect }: RunSelectProps) => {
         value={selectedTestRun ?? ""}
         label="Age"
         onChange={onSelectChange}
+        size="small"
       >
         {testRuns
           ?.filter((run) => !!run?.id)

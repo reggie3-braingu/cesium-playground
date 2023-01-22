@@ -48,7 +48,7 @@ export const useGetTspiEntityRunsByEventId = ({
   });
 
   return {
-    entitiesCzml: useQueryResponse.data,
+    entityRunData: useQueryResponse.data,
     ...useQueryResponse,
   };
 };

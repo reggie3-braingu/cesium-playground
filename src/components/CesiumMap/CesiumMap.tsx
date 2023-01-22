@@ -1,6 +1,5 @@
-import { BASE_API_SERVER_URL, EVENT_IDS } from "@src/globals";
-import { useGetTestRunsByEventId } from "@src/hooks/useGetTestRunsByEventId";
-import { JulianDate, ClockRange, ClockStep } from "cesium";
+import { useMapData } from "@src/hooks/useMapData";
+import { JulianDate, ClockRange } from "cesium";
 import React from "react";
 import { Clock, Viewer } from "resium";
 import { Boundaries } from "../Boundaries";
@@ -8,27 +7,23 @@ import { EmitterSites } from "../EmitterSites";
 import { Entities } from "../Entities";
 import { ViewerSetup } from "./ViewerSetup";
 
-interface MapProps {
+interface CesiumMapProps {
   eventId: string;
   runDateTimes: [Date, Date] | null;
   eventDateTimes: [Date, Date] | null;
 }
 
-const USE_RUN_TIMES = true;
+const CesiumMap = ({
+  eventId,
+  eventDateTimes,
+  runDateTimes,
+}: CesiumMapProps) => {
+  const { julianStart, julianStop } = useMapData({
+    runDateTimes,
+    eventDateTimes,
+  });
 
-const Map = ({ eventId, eventDateTimes, runDateTimes }: MapProps) => {
-  if (!eventDateTimes || !runDateTimes) return null;
-
-  const julianStart = JulianDate.fromIso8601(
-    USE_RUN_TIMES
-      ? runDateTimes[0].toISOString()
-      : eventDateTimes[0].toISOString()
-  );
-  const julianStop = JulianDate.fromIso8601(
-    USE_RUN_TIMES
-      ? runDateTimes[1].toISOString()
-      : eventDateTimes[1].toISOString()
-  );
+  if (!julianStart || !julianStop) return null;
 
   return (
     <>
@@ -51,4 +46,4 @@ const Map = ({ eventId, eventDateTimes, runDateTimes }: MapProps) => {
   );
 };
 
-export default Map;
+export default CesiumMap;
