@@ -20,6 +20,8 @@ const Entities = ({ eventId, onLoaded = noop }: EntitiesProps) => {
     eventId,
   });
 
+  console.log(JSON.stringify(entitiesCzml));
+
   const entityRunsRef = useRef<
     Record<string, CesiumComponentRef<CzmlDataSource> | null>
   >({});

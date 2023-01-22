@@ -1,0 +1,164 @@
+[
+    {
+        "id": "0962ab4d-d9c7-4337-9b8d-6f0318391e42",
+        "event": "9153b895-e18a-480a-b2eb-5f5e9d4fd075",
+        "tspientityrun": {
+            "id": "f852b70c-0aff-4e31-bd83-d8ef70e7944a",
+            "entity_id": "f49d409c-710b-49ae-844c-a88cb1d3894d",
+            "tspi_source": "GAINR",
+            "czmlpath": "f16-502-1sec.json",
+            "filename": "OF_f16-502_175AM_24Jun21_tspi-te_NOSE.csv",
+            "date": "2021-06-24T00:00:00Z",
+            "entity": {
+                "id": "f49d409c-710b-49ae-844c-a88cb1d3894d",
+                "name": "F16-502",
+                "type": {
+                    "id": "35f9140b-cb0f-454e-b8f0-9706ceb93d84",
+                    "name": "F-16",
+                    "category": "Dynamic",
+                    "domain": "Air",
+                    "data": {
+                        "gltf": "F-16C.gltf",
+                        "png": "F-16C.png"
+                    }
+                }
+            }
+        },
+        "czml_url": "http://localhost:8000/event_map/event_tspi_czml/0962ab4d-d9c7-4337-9b8d-6f0318391e42"
+    },
+    {
+        "id": "5b82891e-8375-4b90-82d3-108b2ccdafd7",
+        "event": "9153b895-e18a-480a-b2eb-5f5e9d4fd075",
+        "tspientityrun": {
+            "id": "a0416e12-993d-4b0c-b0e8-0e0a17701530",
+            "entity_id": "20e835e6-c21d-415f-90d9-0b8514d70ee5",
+            "tspi_source": "GAINR",
+            "czmlpath": "public/czml/F35-8316-1-second.json",
+            "filename": "OF_F35B-8316_0037_20210624_tspi-gl_None.csv",
+            "date": "2021-06-24T00:00:00Z",
+            "entity": {
+                "id": "20e835e6-c21d-415f-90d9-0b8514d70ee5",
+                "name": "F35B-8316",
+                "type": {
+                    "id": "2bfa71c4-8ae0-4f15-8e71-20784f775a8e",
+                    "name": "F-35B",
+                    "category": "Dynamic",
+                    "domain": "Air",
+                    "data": {
+                        "gltf": "F-35.gltf",
+                        "png": "F-35.png"
+                    }
+                }
+            }
+        },
+        "czml_url": "http://localhost:8000/event_map/event_tspi_czml/5b82891e-8375-4b90-82d3-108b2ccdafd7"
+    },
+    {
+        "id": "5b992755-95da-4a8e-b463-1b2ffcb05549",
+        "event": "9153b895-e18a-480a-b2eb-5f5e9d4fd075",
+        "tspientityrun": {
+            "id": "3bda2265-d273-4e79-b49d-49aebed839d6",
+            "entity_id": "faa9ba62-9690-4f60-b3ce-d8f09b478278",
+            "tspi_source": "GAINR",
+            "czmlpath": "public/czml/f16-835-1-second.json",
+            "filename": "OF_f16-835_175AM_24Jun21_tspi-te_NOSE.csv",
+            "date": "2021-06-24T00:00:00Z",
+            "entity": {
+                "id": "faa9ba62-9690-4f60-b3ce-d8f09b478278",
+                "name": "F16-835",
+                "type": {
+                    "id": "35f9140b-cb0f-454e-b8f0-9706ceb93d84",
+                    "name": "F-16",
+                    "category": "Dynamic",
+                    "domain": "Air",
+                    "data": {
+                        "gltf": "F-16C.gltf",
+                        "png": "F-16C.png"
+                    }
+                }
+            }
+        },
+        "czml_url": "http://localhost:8000/event_map/event_tspi_czml/5b992755-95da-4a8e-b463-1b2ffcb05549"
+    },
+    {
+        "id": "b7cfe534-7cd1-4bc9-87e8-1ab7c439994f",
+        "event": "9153b895-e18a-480a-b2eb-5f5e9d4fd075",
+        "tspientityrun": {
+            "id": "f852b70c-0aff-4e31-bd83-d8ef70e7944a",
+            "entity_id": "f49d409c-710b-49ae-844c-a88cb1d3894d",
+            "tspi_source": "GAINR",
+            "czmlpath": "f16-502-1sec.json",
+            "filename": "OF_f16-502_175AM_24Jun21_tspi-te_NOSE.csv",
+            "date": "2021-06-24T00:00:00Z",
+            "entity": {
+                "id": "f49d409c-710b-49ae-844c-a88cb1d3894d",
+                "name": "F16-502",
+                "type": {
+                    "id": "35f9140b-cb0f-454e-b8f0-9706ceb93d84",
+                    "name": "F-16",
+                    "category": "Dynamic",
+                    "domain": "Air",
+                    "data": {
+                        "gltf": "F-16C.gltf",
+                        "png": "F-16C.png"
+                    }
+                }
+            }
+        },
+        "czml_url": "http://localhost:8000/event_map/event_tspi_czml/b7cfe534-7cd1-4bc9-87e8-1ab7c439994f"
+    },
+    {
+        "id": "c3d5bda1-1681-4927-91ef-346c585e0671",
+        "event": "9153b895-e18a-480a-b2eb-5f5e9d4fd075",
+        "tspientityrun": {
+            "id": "a0416e12-993d-4b0c-b0e8-0e0a17701530",
+            "entity_id": "20e835e6-c21d-415f-90d9-0b8514d70ee5",
+            "tspi_source": "GAINR",
+            "czmlpath": "public/czml/F35-8316-1-second.json",
+            "filename": "OF_F35B-8316_0037_20210624_tspi-gl_None.csv",
+            "date": "2021-06-24T00:00:00Z",
+            "entity": {
+                "id": "20e835e6-c21d-415f-90d9-0b8514d70ee5",
+                "name": "F35B-8316",
+                "type": {
+                    "id": "2bfa71c4-8ae0-4f15-8e71-20784f775a8e",
+                    "name": "F-35B",
+                    "category": "Dynamic",
+                    "domain": "Air",
+                    "data": {
+                        "gltf": "F-35.gltf",
+                        "png": "F-35.png"
+                    }
+                }
+            }
+        },
+        "czml_url": "http://localhost:8000/event_map/event_tspi_czml/c3d5bda1-1681-4927-91ef-346c585e0671"
+    },
+    {
+        "id": "ca5ed8c2-2ed2-441f-8dfe-97b0017065a8",
+        "event": "9153b895-e18a-480a-b2eb-5f5e9d4fd075",
+        "tspientityrun": {
+            "id": "fc2f162f-29bb-4f61-a5c6-b84e2f55056d",
+            "entity_id": "e01ffcd4-9ede-4f78-b6dd-32b23eaa234a",
+            "tspi_source": "GAINR",
+            "czmlpath": "public/czml/full-1-second.json",
+            "filename": "OF_F35B-8315_0053_20210624_tspi.csv",
+            "date": "2021-06-24T00:00:00Z",
+            "entity": {
+                "id": "e01ffcd4-9ede-4f78-b6dd-32b23eaa234a",
+                "name": "F35B-8315",
+                "type": {
+                    "id": "2bfa71c4-8ae0-4f15-8e71-20784f775a8e",
+                    "name": "F-35B",
+                    "category": "Dynamic",
+                    "domain": "Air",
+                    "data": {
+                        "gltf": "F-35.gltf",
+                        "png": "F-35.png"
+                    }
+                }
+            }
+        },
+        "czml_url": "http://localhost:8000/event_map/event_tspi_czml/ca5ed8c2-2ed2-441f-8dfe-97b0017065a8"
+    }
+]

@@ -21,7 +21,6 @@ export default function Home() {
     eventId,
   });
   const { event } = useGetEventById({ eventId, rootUrl: BASE_API_SERVER_URL });
-  console.log({ event });
 
   const [runTimes, setRunTimes] = useState<[Date, Date] | null>(null);
 
@@ -41,6 +40,8 @@ export default function Home() {
       setRunTimes([new Date(start_date_time), new Date(end_date_time)]);
     }
   };
+
+  console.log(eventDateTimes?.[0], eventDateTimes?.[1]);
 
   return (
     <>

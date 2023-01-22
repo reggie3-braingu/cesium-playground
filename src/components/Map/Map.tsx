@@ -6,7 +6,6 @@ import { Clock, Viewer } from "resium";
 import { Boundaries } from "../Boundaries";
 import { EmitterSites } from "../EmitterSites";
 import { Entities } from "../Entities";
-import { useCesium } from "resium";
 import { ViewerSetup } from "./ViewerSetup";
 
 interface MapProps {
@@ -16,6 +15,7 @@ interface MapProps {
 }
 
 const USE_RUN_TIMES = true;
+
 const Map = ({ eventId, eventDateTimes, runDateTimes }: MapProps) => {
   if (!eventDateTimes || !runDateTimes) return null;
 
@@ -38,7 +38,7 @@ const Map = ({ eventId, eventDateTimes, runDateTimes }: MapProps) => {
           stopTime={julianStop}
           clockRange={ClockRange.LOOP_STOP} // loop when we hit the end time
           // clockStep={ClockStep.SYSTEM_CLOCK_MULTIPLIER}
-          // multiplier={4000} // how much time to advance each tick
+          multiplier={4000} // how much time to advance each tick
           // shouldAnimate // Animation on by default
           currentTime={julianStart}
         />

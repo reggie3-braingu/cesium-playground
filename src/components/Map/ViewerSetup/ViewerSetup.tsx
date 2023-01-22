@@ -10,7 +10,7 @@ type ViewerSetupProps = {
 const ViewerSetup = ({ julianStart, julianStop }: ViewerSetupProps) => {
   const { viewer } = useCesium();
 
-  console.log("--- setting up  ---", { julianStart }, { julianStop });
+  // console.log("--- setting up  ---", { julianStart }, { julianStop });
   if (viewer) {
     viewer.timeline.zoomTo(julianStart, julianStop);
   }

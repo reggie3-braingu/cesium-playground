@@ -115,3 +115,30 @@ export type Event = {
       | null;
   };
 };
+
+export type EventAsset = {
+  id: string;
+  assetentity?: {
+    id?: string;
+    tailId: string;
+    data?: Record<string, any>;
+    entity?: {
+      id?: string;
+      name?: string | null;
+      type?: {
+        id?: string;
+        name: string;
+        category?: "Static" | "Dynamic";
+        domain?: "Air" | "Land" | "Sea" | "Space" | "Subsurface" | "Cyber";
+        data?: Record<string, any>;
+      };
+    };
+  };
+  callsign: string;
+  data?: Record<string, any>;
+  event: string;
+};
+
+export type KmlFile = any;
+export type TspiCzml = any;
+export type EmitterCzml = any;
