@@ -42,7 +42,7 @@ const LeafletMap = ({ eventId }: LeafletMapProps) => {
         </Popup>
       </Marker>
       <LeafletMapBoundaries boundaries={boundaries} />
-      <LeafletMapAssets entityRunData={entityRunData} />
+      {/* <LeafletMapAssets entityRunData={entityRunData} /> */}
     </MapContainer>
   );
 };

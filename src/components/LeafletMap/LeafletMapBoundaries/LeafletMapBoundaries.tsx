@@ -21,6 +21,7 @@ const LeafletMapBoundaries = ({
 
   if (!fileDataObjects) return null;
 
+  console.log("HERE 1");
   return (
     <>
       {fileDataObjects.map(({ data: kmlFileData }) => {
