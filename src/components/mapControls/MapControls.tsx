@@ -1,6 +1,11 @@
 import { FormControlLabel, Paper, Switch } from "@mui/material";
-import useUiStore from "@src/zustand/uiStore";
+import { RootState } from "@src/redux/store";
+import {
+  toggleAssetLabelsVisible,
+  toggleEmitterLabelsVisible,
+} from "@src/redux/uiSlice";
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { RunSelect } from "../RunSelect";
 
 type MapControlsProps = {
@@ -9,12 +14,18 @@ type MapControlsProps = {
 };
 
 const MapControls = ({ eventId, onRunSelect }: MapControlsProps) => {
-  const {
-    emitterLabelsVisible,
-    toggleEmitterLabelsVisible,
-    assetLabelsVisible,
-    toggleAssetLabelsVisible,
-  } = useUiStore();
+  const { assetLabelsVisible, emitterLabelsVisible } = useSelector(
+    (appState: RootState) => appState.ui
+  );
+
+  const dispatch = useDispatch();
+
+  const onToggleEmitterLabels = () => {
+    dispatch(toggleEmitterLabelsVisible);
+  };
+  const onToggleAssetLabels = () => {
+    dispatch(toggleAssetLabelsVisible);
+  };
 
   return (
     <Paper
@@ -38,17 +49,14 @@ const MapControls = ({ eventId, onRunSelect }: MapControlsProps) => {
         control={
           <Switch
             checked={emitterLabelsVisible}
-            onChange={toggleEmitterLabelsVisible}
+            onChange={onToggleEmitterLabels}
           />
         }
         label="Show Emitter Labels"
       />
       <FormControlLabel
         control={
-          <Switch
-            checked={assetLabelsVisible}
-            onChange={toggleAssetLabelsVisible}
-          />
+          <Switch checked={assetLabelsVisible} onChange={onToggleAssetLabels} />
         }
         label="Show Asset Labels"
       />

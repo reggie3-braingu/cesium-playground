@@ -5,8 +5,10 @@ import { useGetEventBoundariesByEventId } from "@src/hooks/useGetEventBoundaries
 import { LeafletMapBoundaries } from "./LeafletMapBoundaries";
 import { useGetTspiEntityRunsByEventId } from "@src/hooks/useGetTspiEntityRunsByEventId";
 import { LeafletMapDebug } from "./LeafletMapDebug";
-import { LeafletMapAssets } from "./LeafletMapAssets";
 import { CzmlDataDictionary } from "@src/hooks/getCzmlFromFileData/getCzmlFromFileData";
+import { LeafletMapAssets } from "./LeafletMapAssets";
+
+import "leaflet/dist/leaflet.css";
 
 interface LeafletMapProps {
   eventId: string;
@@ -31,17 +33,22 @@ const LeafletMap = ({ eventId }: LeafletMapProps) => {
     availabilityDateTimeRange: [Date, Date] | null
   ) => {};
 
-  console.count("LeafletMap");
+  // console.count("LeafletMap");
   return (
     <MapContainer
       center={[35.7882157380178, -115.61195423532774]}
       zoom={7}
       scrollWheelZoom={false}
       style={{ height: "100vh", width: "100vw" }}
+      data-testid="leaflet-map"
     >
-      <TileLayer
+      {/* <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      /> */}
+      <TileLayer
+        attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+        url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
       />
       <Marker position={[35.7882157380178, -115.61195423532774]}>
         <Popup>

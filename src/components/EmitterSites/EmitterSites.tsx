@@ -9,8 +9,9 @@ import {
 } from "resium";
 import { CzmlDataSource } from "cesium";
 import noop from "lodash.noop";
-import useUiStore from "@src/zustand/uiStore";
 import { Viewer } from "cesium";
+import { useSelector } from "react-redux";
+import { RootState } from "@src/redux/store";
 
 interface EmitterSitesProps {
   eventId: string;
@@ -21,7 +22,9 @@ const EmitterSites = ({ eventId, onLoaded = noop }: EmitterSitesProps) => {
   const { viewer } = useCesium();
   const typedViewer = viewer as Viewer;
 
-  const { emitterLabelsVisible } = useUiStore();
+  const { emitterLabelsVisible } = useSelector(
+    (appState: RootState) => appState.ui
+  );
 
   const { emitterSites } = useGetEmitterSitesByEventId({
     rootUrl: BASE_API_SERVER_URL,

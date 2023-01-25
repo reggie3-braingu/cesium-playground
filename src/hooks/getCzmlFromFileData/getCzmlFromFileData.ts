@@ -1,8 +1,7 @@
 import { Czml } from "@src/index";
 import React, { useEffect, useRef, useState } from "react";
-import { min } from "date-fns";
+import { min, max } from "date-fns";
 import _ from "lodash";
-import useCzmlTimeDataStore from "@src/zustand/czmlTimeDataStore";
 
 export interface CzmlDataItem {
   documentDefinition: { id: string; version: string };
@@ -24,22 +23,20 @@ const getCzmlFromFileData = ({
 
   if (fileDataObjects?.length) {
     fileDataObjects.forEach((object) => {
-      if (!object.data) return;
+      if (!object.data || object.isLoading) return;
 
       const documentDefinition = object.data.fileText[0];
       const czml = object.data.fileText[1];
       czmlData[object.data.itemId] = { documentDefinition, czml };
     });
 
-    earliestEpochDateTime = getEarliestEpochDateTime(czmlData);
-    availabilityDateTimeRange = getAvailibilityRange(czmlData);
+    if (!!Object.keys(czmlData).length) {
+      earliestEpochDateTime = getEarliestEpochDateTime(czmlData);
+      availabilityDateTimeRange = getAvailibilityRange(czmlData);
+    }
   }
 
-  //   console.log(
-  //     "availabilityDateTimeRange.current",
-  //     availabilityDateTimeRange.current
-  //   );
-
+  console.log({ availabilityDateTimeRange });
   return {
     czmlData,
     earliestEpochDateTime,
@@ -72,5 +69,7 @@ const getAvailibilityRange = (
     startAvailabilities.push(new Date(availabilities[0]));
     endAvailabilities.push(new Date(availabilities[1]));
   });
-  return [min(startAvailabilities), min(endAvailabilities)];
+
+  console.log({ endAvailabilities });
+  return [min(startAvailabilities), max(endAvailabilities)];
 };

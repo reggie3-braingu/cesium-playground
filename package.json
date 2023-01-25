@@ -20,8 +20,10 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.5",
     "@next/font": "13.1.4",
+    "@reduxjs/toolkit": "^1.9.1",
     "@tanstack/react-query": "^4.22.3",
     "@tanstack/react-query-devtools": "^4.22.3",
     "@types/node": "18.11.18",
@@ -42,10 +44,10 @@
     "react-dom": "18.2.0",
     "react-leaflet": "^4.2.0",
     "react-leaflet-kml": "^2.1.1",
+    "react-redux": "^8.0.5",
     "react-timer-hook": "^3.0.5",
     "resium": "^1.16.0",
-    "typescript": "4.9.4",
-    "zustand": "^4.3.2"
+    "typescript": "4.9.4"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",

@@ -2,6 +2,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { MapControls } from "@src/components/mapControls";
 import { useMapSetup } from "@src/hooks/useMapSetup";
+import { useStopwatch } from "react-timer-hook";
 
 const LeafletMap = dynamic(
   () => import("../../components/LeafletMap/LeafletMap"),
@@ -18,6 +19,7 @@ const PlaybackControls = dynamic(
 
 const IndexLeafletMap = () => {
   const { eventId, runTimes, eventDateTimes, onRunSelect } = useMapSetup();
+
   return (
     <div style={{ border: "1px dashed yellow" }}>
       <LeafletMap
@@ -26,7 +28,7 @@ const IndexLeafletMap = () => {
         eventDateTimes={eventDateTimes}
       />
       <MapControls onRunSelect={onRunSelect} eventId={eventId} />
-      {/* <PlaybackControls /> */}
+      <PlaybackControls />
     </div>
   );
 };

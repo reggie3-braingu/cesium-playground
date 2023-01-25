@@ -1,6 +1,6 @@
 import { it, describe, expect } from "vitest";
 
-import cartographicDegrees from "../../../../dataSamples/cartographicDegrees.json";
+import cartographicDegrees from "../../../../../dataSamples/cartographicDegrees.json";
 import { getPositionFromCartographicDegrees } from "./getPositionFromCartographicDegrees";
 
 describe("getPositionFromCartographicDegrees tests", () => {

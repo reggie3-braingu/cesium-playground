@@ -8,7 +8,8 @@ import {
 } from "resium";
 import { CzmlDataSource } from "cesium";
 import noop from "lodash.noop";
-import useUiStore from "@src/zustand/uiStore";
+import { RootState } from "@src/redux/store";
+import { useSelector } from "react-redux";
 
 interface EntitiesProps {
   eventId: string;
@@ -16,7 +17,9 @@ interface EntitiesProps {
 }
 
 const Entities = ({ eventId, onLoaded = noop }: EntitiesProps) => {
-  const { assetLabelsVisible } = useUiStore();
+  const { assetLabelsVisible } = useSelector(
+    (appState: RootState) => appState.ui
+  );
 
   const { entityRunData } = useGetTspiEntityRunsByEventId({
     rootUrl: BASE_API_SERVER_URL,
