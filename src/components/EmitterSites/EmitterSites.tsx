@@ -68,26 +68,15 @@ const EmitterSites = ({ eventId, onLoaded = noop }: EmitterSitesProps) => {
   }, []);
 
   useEffect(() => {
-    // if (emitterSitesDataSourceRef.current) {
-    //   Object.entries(emitterSitesDataSourceRef).forEach(([id, dataSource]) => {
-    //     const czmlDataSource = dataSource as CzmlDataSource;
-
-    //     if (czmlDataSource.entities) {
-    //       czmlDataSource.entities.show = emitterLabelsVisible;
-    //     }
-    //   });
-    // }
     if (emitterSitesRef.current) {
       Object.entries(emitterSitesRef.current).forEach(([id, emitterSite]) => {
         if (!emitterSite?.cesiumElement) return;
         console.log("-----> ", id, emitterSite?.cesiumElement?.entities);
         try {
-          // @ts-ignore
+          // @ts-ignore "_" typically indicates something we shouldn't access, but I
+          // haven't found another way to alter this value
           emitterSite.cesiumElement.entities._entities._array[0]._label._show._value =
             emitterLabelsVisible;
-          // emitterSite.cesiumElement.entities._entities._array[0]._label._text._value =
-          //   "";
-          // emitterSite.cesiumElement.entities._entities._array[0]._label;
         } catch (error) {
           console.error("error");
           // @ts-ignore

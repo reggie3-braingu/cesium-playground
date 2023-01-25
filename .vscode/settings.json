@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
+        "Availibility",
         "Czml",
         "emittersites",
         "eventasset",
@@ -12,5 +13,25 @@
         "Tspi",
         "tspientityrun",
         "zustand"
-    ]
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#21cc00",
+        "activityBar.background": "#21cc00",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#405fff",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "commandCenter.border": "#e7e7e799",
+        "sash.hoverBorder": "#21cc00",
+        "statusBar.background": "#199900",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#21cc00",
+        "statusBarItem.remoteBackground": "#199900",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "titleBar.activeBackground": "#199900",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#19990099",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#199900"
 }

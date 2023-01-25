@@ -1,15 +1,38 @@
+import getCzmlFromFileData, {
+  CzmlDataDictionary,
+} from "@src/hooks/getCzmlFromFileData/getCzmlFromFileData";
 import { useGetFilesByUrls } from "@src/hooks/useGetFilesByUrls";
 import { EventTspiEntityRun } from "@src/index";
-import React from "react";
-import ReactLeafletKml from "react-leaflet-kml"; // react-leaflet-kml must be loaded AFTER react-leaflet
+import useCzmlTimeDataStore from "@src/zustand/czmlTimeDataStore";
+import React, { useEffect } from "react";
+import { Marker, Popup } from "react-leaflet";
+import { useStopwatch } from "react-timer-hook";
+import { getPositionFromCartographicDegrees } from "./getPositionFromCartographicDegrees";
 
 type LeafletMapAssetsProps = {
   entityRunData?: EventTspiEntityRun[];
+  setCzmlData: (
+    czmlData: CzmlDataDictionary,
+    earliestEpochDateTime: Date | null,
+    availabilityDateTimeRange: [Date, Date] | null
+  ) => void;
 };
 
 const LeafletMapAssets = ({
   entityRunData: assets = [],
+  setCzmlData,
 }: LeafletMapAssetsProps) => {
+  const {
+    seconds,
+    minutes,
+    hours,
+    days,
+    isRunning,
+    start: startStopWatch,
+    pause: pauseStopWatch,
+    reset,
+  } = useStopwatch({ autoStart: false });
+
   const fileDataObjects = useGetFilesByUrls({
     urlConfigs:
       assets
@@ -19,21 +42,41 @@ const LeafletMapAssets = ({
         }) || [],
   });
 
-  if (!fileDataObjects) return null;
+  const { czmlData, earliestEpochDateTime, availabilityDateTimeRange } =
+    getCzmlFromFileData({
+      fileDataObjects: fileDataObjects,
+    });
+
+  // const czmlData = null,
+  //   earliestEpochDateTime = null,
+  //   availabilityDateTimeRange = null;
+  // useEffect(() => {
+  //   setCzmlData(czmlData, earliestEpochDateTime, availabilityDateTimeRange);
+  // }, [czmlData, earliestEpochDateTime, availabilityDateTimeRange]);
+
+  useEffect(() => {
+    if (czmlData && !isRunning) {
+      // startStopWatch();
+    }
+
+    return () => {
+      pauseStopWatch();
+    };
+  }, [czmlData]);
+
+  if (!czmlData) return null;
 
   return (
     <>
-      {fileDataObjects.map(({ data: czmlFileData }) => {
-        if (!czmlFileData) return null;
-
-        // console.log({ czmlFileData });
-
-        const kmlText = czmlFileData.fileText;
-        const parser = new DOMParser();
-        const parsedKmlText = parser.parseFromString(kmlText, "text/xml");
-
+      {Object.entries(czmlData).map(([id, data]) => {
+        const position = getPositionFromCartographicDegrees(
+          seconds,
+          data.czml.position.cartographicDegrees
+        );
         return (
-          <ReactLeafletKml key={czmlFileData.itemId} kml={parsedKmlText} />
+          <Marker key={id} position={position}>
+            <Popup>You are here</Popup>
+          </Marker>
         );
       })}
     </>

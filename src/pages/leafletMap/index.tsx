@@ -2,10 +2,15 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { MapControls } from "@src/components/mapControls";
 import { useMapSetup } from "@src/hooks/useMapSetup";
-import PlaybackControls from "@src/components/PlaybackControls/PlaybackControls";
 
 const LeafletMap = dynamic(
   () => import("../../components/LeafletMap/LeafletMap"),
+  {
+    ssr: false,
+  }
+);
+const PlaybackControls = dynamic(
+  () => import("../../components/PlaybackControls/PlaybackControls"),
   {
     ssr: false,
   }
@@ -21,7 +26,7 @@ const IndexLeafletMap = () => {
         eventDateTimes={eventDateTimes}
       />
       <MapControls onRunSelect={onRunSelect} eventId={eventId} />
-      <PlaybackControls />
+      {/* <PlaybackControls /> */}
     </div>
   );
 };

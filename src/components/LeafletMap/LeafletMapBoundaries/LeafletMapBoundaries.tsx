@@ -1,4 +1,5 @@
 import { useGetFilesByUrls } from "@src/hooks/useGetFilesByUrls";
+import { GetFilesResponse } from "@src/hooks/useGetFilesByUrls/useGetFilesByUrls";
 import { EventBoundary } from "@src/index";
 import React from "react";
 import ReactLeafletKml from "react-leaflet-kml"; // react-leaflet-kml must be loaded AFTER react-leaflet
@@ -21,12 +22,12 @@ const LeafletMapBoundaries = ({
 
   if (!fileDataObjects) return null;
 
-  console.log("HERE 1");
   return (
     <>
       {fileDataObjects.map(({ data: kmlFileData }) => {
         if (!kmlFileData) return null;
-        const kmlText = kmlFileData.kmlText;
+
+        const kmlText = kmlFileData.fileText;
         const parser = new DOMParser();
         const parsedKmlText = parser.parseFromString(kmlText, "text/xml");
         return <ReactLeafletKml key={kmlFileData.itemId} kml={parsedKmlText} />;

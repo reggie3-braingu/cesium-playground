@@ -11,7 +11,6 @@ const useClockStore = create<ClockState>()(
     persist(
       (set) => ({
         seconds: 0,
-
         setSeconds: (newSeconds: number) =>
           set(() => ({
             seconds: newSeconds,

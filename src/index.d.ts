@@ -142,3 +142,64 @@ export type EventAsset = {
 export type KmlFile = any;
 export type TspiCzml = any;
 export type EmitterCzml = any;
+
+export interface Czml {
+  id: string;
+  billboard: Billboard;
+  availability: string;
+  label: Label;
+  orientation: Orientation;
+  position: Position;
+}
+
+export interface Billboard {
+  image: string;
+  show: Show[];
+  scale: number;
+}
+
+export interface Show {
+  boolean: boolean;
+}
+
+export interface Label {
+  fillColor: FillColor[];
+  font: string;
+  horizontalOrigin: string;
+  outlineColor: OutlineColor;
+  pixelOffset: PixelOffset;
+  scale: number;
+  show: Show2[];
+  style: string;
+  text: string;
+  verticalOrigin: string;
+}
+
+export interface FillColor {
+  interval: string;
+  rgba: number[];
+}
+
+export interface OutlineColor {
+  rgba: number[];
+}
+
+export interface PixelOffset {
+  cartesian2: number[];
+}
+
+export interface Show2 {
+  interval: string;
+  boolean: boolean;
+}
+
+export interface Orientation {
+  velocityReference: string;
+}
+
+export interface Position {
+  interpolationAlgorithm: string;
+  interpolationDegree: number;
+  epoch: string;
+  cartographicDegrees: number[];
+}

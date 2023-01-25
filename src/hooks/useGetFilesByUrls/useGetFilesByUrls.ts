@@ -3,6 +3,13 @@ import { useQueries, useQuery, UseQueryOptions } from "@tanstack/react-query";
 import axios, { AxiosResponse } from "axios";
 import { KML_FILE_QUERY_KEY } from "../queryConstants";
 
+type GetFileResponse = {
+  fileText: string;
+  id: string;
+};
+
+export type GetFilesResponse = GetFileResponse[];
+
 export interface useGetFilesByUrlsArgs {
   urlConfigs: { itemId: string; url: string }[];
   queryOptions?: UseQueryOptions<KmlFile>;
@@ -17,7 +24,7 @@ export const useGetFilesByUrls = ({
   isDebugEnabled &&
     console.debug("------ useGetFilesByUrls Debug enabled -----");
 
-  const useQueriesResponse = useQueries({
+  const useQueriesResponse = useQueries<GetFilesResponse>({
     queries: urlConfigs.map((urlConfig) => {
       return {
         queryKey: [KML_FILE_QUERY_KEY, urlConfig.url],

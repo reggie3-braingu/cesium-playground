@@ -1,10 +1,12 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import React, { useEffect } from "react";
+import React from "react";
 import { BASE_API_SERVER_URL } from "@src/globals";
 import { useGetEventBoundariesByEventId } from "@src/hooks/useGetEventBoundariesByEventId";
 import { LeafletMapBoundaries } from "./LeafletMapBoundaries";
 import { useGetTspiEntityRunsByEventId } from "@src/hooks/useGetTspiEntityRunsByEventId";
+import { LeafletMapDebug } from "./LeafletMapDebug";
 import { LeafletMapAssets } from "./LeafletMapAssets";
+import { CzmlDataDictionary } from "@src/hooks/getCzmlFromFileData/getCzmlFromFileData";
 
 interface LeafletMapProps {
   eventId: string;
@@ -23,8 +25,13 @@ const LeafletMap = ({ eventId }: LeafletMapProps) => {
     eventId,
   });
 
-  //console.log({ entityRunData });
+  const setCzmlData = (
+    czmlData: CzmlDataDictionary,
+    earliestEpochDateTime: Date | null,
+    availabilityDateTimeRange: [Date, Date] | null
+  ) => {};
 
+  console.count("LeafletMap");
   return (
     <MapContainer
       center={[35.7882157380178, -115.61195423532774]}
@@ -42,7 +49,11 @@ const LeafletMap = ({ eventId }: LeafletMapProps) => {
         </Popup>
       </Marker>
       <LeafletMapBoundaries boundaries={boundaries} />
-      {/* <LeafletMapAssets entityRunData={entityRunData} /> */}
+      <LeafletMapDebug isDebugEnabled />
+      <LeafletMapAssets
+        entityRunData={entityRunData}
+        setCzmlData={setCzmlData}
+      />
     </MapContainer>
   );
 };
