@@ -7,7 +7,7 @@ interface ClockState {
 
 const initialClockState = {
   elapsedSeconds: 0,
-  speedModifier: 100,
+  speedModifier: 50,
 };
 
 const ClockStateSlice = createSlice({

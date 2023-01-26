@@ -2,7 +2,7 @@ import getCzmlFromFileData, {
   CzmlDataDictionary,
 } from "@src/hooks/getCzmlFromFileData/getCzmlFromFileData";
 import { useGetFilesByUrls } from "@src/hooks/useGetFilesByUrls";
-import { EventTspiEntityRun } from "@src/index";
+import { Czml, EventTspiEntityRun } from "@src/index";
 import {
   setAvailabilityDateTimeRange,
   setEarliestEpochDateTime,
@@ -14,6 +14,7 @@ import { Marker, Popup, useMap, useMapEvents } from "react-leaflet";
 import { useDispatch, useSelector } from "react-redux";
 import { useStopwatch } from "react-timer-hook";
 import { getPositionFromCartographicDegrees } from "./getPositionFromCartographicDegrees";
+import "leaflet.marker.slideto";
 
 type UseLeafletMapAssetsArgs = {
   entityRunData?: EventTspiEntityRun[];
@@ -22,19 +23,13 @@ type UseLeafletMapAssetsArgs = {
 const useLeafletMapAssets = ({
   entityRunData: assets = [],
 }: UseLeafletMapAssetsArgs) => {
-  const {
-    seconds,
-    minutes,
-    hours,
-    days,
-    isRunning,
-    start: startStopWatch,
-    pause: pauseStopWatch,
-    reset,
-  } = useStopwatch({ autoStart: false });
   const markerDictionaryRef = useRef<Record<string, L.Marker>>({});
+  const markerCzmlDictionaryRef = useRef<Record<string, Czml>>({});
   const [areMarkersInitialized, setAreMarkersInitialized] =
     useState<boolean>(false);
+  const { elapsedSeconds } = useSelector(
+    (appState: RootState) => appState.clock
+  );
 
   const { emitterLabelsVisible } = useSelector(
     (appState: RootState) => appState.ui
@@ -82,30 +77,73 @@ const useLeafletMapAssets = ({
     }
   }, [czmlData, earliestEpochDateTime, availabilityDateTimeRange, dispatch]);
 
-  // useEffect(() => {
-  //   if (areMarkersInitialized && !isRunning) {
-  //     // startStopWatch();
-  //   }
-
-  //   return () => {
-  //     pauseStopWatch();
-  //   };
-  // }, [areMarkersInitialized, isRunning, pauseStopWatch]);
-
   useEffect(() => {
-    if (czmlData) {
+    // console.log({ assets, czmlData });
+    // console.log("czmlData length", Object.keys(czmlData).length);
+    // console.log(
+    //   "Object.keys(czmlData).length >= assets.length",
+    //   Object.keys(czmlData).length >= assets.length
+    // );
+
+    if (
+      assets.length &&
+      Object.keys(czmlData).length >= assets.length &&
+      !areMarkersInitialized
+    ) {
+      console.log("--- Initializing Markers ---");
+      // remove any current markers
+      Object.entries(markerDictionaryRef.current).forEach(
+        ([id, leafletMarker]) => {
+          leafletMarker.remove();
+        }
+      );
+
+      markerDictionaryRef.current = {};
+      markerCzmlDictionaryRef.current = {};
       Object.entries(czmlData).forEach(([id, data]) => {
         const position = getPositionFromCartographicDegrees(
-          seconds,
+          elapsedSeconds,
           data.czml.position.cartographicDegrees
         );
-
-        const marker = L.marker([position.lat, position.lng]).addTo(leafletMap);
+        // console.log({ position });
+        let marker = {} as L.Marker;
+        if (position) {
+          marker = L.marker([position.lat, position.lng]).addTo(leafletMap);
+        }
         markerDictionaryRef.current[id] = marker;
+        markerCzmlDictionaryRef.current[id] = data.czml;
       });
       setAreMarkersInitialized(true);
     }
-  }, [czmlData, leafletMap, seconds]);
+  }, [
+    areMarkersInitialized,
+    czmlData,
+    leafletMap,
+    elapsedSeconds,
+    assets.length,
+    assets,
+  ]);
+
+  useEffect(() => {
+    if (areMarkersInitialized) {
+      // console.log("*** moving markers ***");
+      Object.entries(markerDictionaryRef.current).forEach(
+        ([id, leafletMarker]) => {
+          const newPosition = getPositionFromCartographicDegrees(
+            elapsedSeconds,
+            markerCzmlDictionaryRef.current[id].position.cartographicDegrees
+          );
+          if (newPosition) {
+            // leafletMarker.setLatLng(newPosition);
+            leafletMarker.slideTo([newPosition.lat, newPosition.lng], {
+              // duration: 2000,
+              keepAtCenter: false,
+            });
+          }
+        }
+      );
+    }
+  }, [areMarkersInitialized, elapsedSeconds]);
 };
 
 export default useLeafletMapAssets;

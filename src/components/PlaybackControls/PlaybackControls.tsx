@@ -21,6 +21,9 @@ const PlaybackControls = (props: Props) => {
   const { earliestEpochDateTime, availabilityDateTimeRange } = useSelector(
     (appState: RootState) => appState.czmlTimeData
   );
+  const { speedModifier } = useSelector(
+    (appState: RootState) => appState.clock
+  );
   const [currentClockState, setCurrentClockState] =
     useState<ClockStates>("paused");
 
@@ -34,12 +37,12 @@ const PlaybackControls = (props: Props) => {
       if (currentClockState === "running") {
         dispatch(incrementElapsedSeconds());
       }
-    }, 1000);
+    }, 1000 / speedModifier);
 
     return () => {
       clearInterval(intervalId);
     };
-  }, [dispatch, currentClockState]);
+  }, [dispatch, currentClockState, speedModifier]);
 
   const onClickReset = () => {
     dispatch(setElapsedSeconds(0));
@@ -54,7 +57,6 @@ const PlaybackControls = (props: Props) => {
     setCurrentClockState("running");
   };
 
-  console.log({ currentClockState });
   return (
     <Container variant="outlined">
       {currentClockState === "paused" ? (

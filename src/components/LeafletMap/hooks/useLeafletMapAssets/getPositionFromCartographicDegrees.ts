@@ -9,5 +9,5 @@ export const getPositionFromCartographicDegrees = (
   const startPoint = timeSecond * 4;
   const slice = positions.slice(startPoint, startPoint + 4);
 
-  return { lat: slice[2], lng: slice[1] };
+  return slice[1] && slice[2] ? { lat: slice[2], lng: slice[1] } : null;
 };

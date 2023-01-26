@@ -36,7 +36,7 @@ const getCzmlFromFileData = ({
     }
   }
 
-  console.log({ availabilityDateTimeRange });
+  // console.log({ availabilityDateTimeRange });
   return {
     czmlData,
     earliestEpochDateTime,
@@ -70,6 +70,6 @@ const getAvailibilityRange = (
     endAvailabilities.push(new Date(availabilities[1]));
   });
 
-  console.log({ endAvailabilities });
+  // console.log({ endAvailabilities });
   return [min(startAvailabilities), max(endAvailabilities)];
 };
